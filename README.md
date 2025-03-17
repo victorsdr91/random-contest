@@ -1,6 +1,7 @@
 # random-contest
-Simple app for generating random contests between friends
+Simple app for generating random contests between friends in different topics
 
+## Run the app
 For running the application just execute
 ```terminal
 npm run start
@@ -11,7 +12,7 @@ For running on dev mode:
 npm run dev
 ```
 
-## EmailJS config
+### EmailJS config
 For sending emails you would need an account in emailjs.com and provide the following config
   - ServiceID
   - TemplateId
