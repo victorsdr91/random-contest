@@ -1,6 +1,7 @@
 import { FC } from "react";
 import emailjs from "@emailjs/browser";
 import { Participant } from "./Participants"
+import { ConfigType } from "./Config";
 
 type ParticipantComplete = {
     name: string,
@@ -8,10 +9,11 @@ type ParticipantComplete = {
     topic: string,
 }
 
-const SendButton: FC<{participants: Array<Participant>, topicList: Array<string>}> = 
+const SendButton: FC<{participants: Array<Participant>, topicList: Array<string>, config: ConfigType}> = 
 ({
     participants,
-    topicList
+    topicList,
+    config
 }) =>
 {
     const shuffle = (array: Array<any>) => {
@@ -44,7 +46,7 @@ const SendButton: FC<{participants: Array<Participant>, topicList: Array<string>
             }
              setTimeout(async () => {
                 console.log("Sending email to: " + participant.email);
-                await emailjs.send("SERVICE_ID", "TEMPLATE_ID", params, { publicKey: "PUBLIC_KEY"}).then(
+                await emailjs.send(config.serviceId, config.templateId, params, { publicKey: config.publicKey}).then(
                     () => { console.log("Email sent to: " + participant.email); }
                 );
             }, 1200*key);
