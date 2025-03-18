@@ -20,4 +20,4 @@ For sending emails you would need an account in emailjs.com and provide the foll
 
 Any information is stored on any system so each time you want to use the app you will need to introduce it again.
 
-Soon it will be running on randomcontest.vicsan.dev
+You can find the project running at https://randomcontest.vicsan.dev
